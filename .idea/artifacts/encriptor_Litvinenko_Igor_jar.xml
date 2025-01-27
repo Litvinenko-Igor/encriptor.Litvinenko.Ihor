@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="encriptor_Litvinenko.Igor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/encriptor_Litvinenko_Igor_jar</output-path>
+    <root id="archive" name="encriptor_Litvinenko.Igor.jar">
+      <element id="module-output" name="encriptor_Litvinenko.Igor" />
+    </root>
+  </artifact>
+</component>
