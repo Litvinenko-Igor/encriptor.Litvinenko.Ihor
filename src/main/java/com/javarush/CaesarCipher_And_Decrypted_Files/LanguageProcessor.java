@@ -31,17 +31,17 @@ public class LanguageProcessor {
     }
     private void analyzeText(String text) {
         for (char c : text.toCharArray()) {
-            if (ALPHABET_EN_UPPER.contains(c) || ALPHABET_EN_SMALLER.contains(c)) {
+            if (englishUppercaseAlphabet.contains(c) || englishLowercaseAlphabet.contains(c)) {
                 hasEnglish = true;
             }
-            if (ALPHABET_UA_UPPER.contains(c) || ALPHABET_UA_SMALLER.contains(c)) {
+            if (ukrainianUppercaseAlphabet.contains(c) || ukrainianLowercaseAlphabet.contains(c)) {
                 hasUkrainian = true;
             }
         }
         if (hasEnglish) {
-            bruteForceRunner.bruteForceDecrypt(text, ALPHABET_EN_UPPER, ALPHABET_EN_SMALLER, "EN");
+            bruteForceRunner.bruteForceDecrypt(text, englishUppercaseAlphabet, englishLowercaseAlphabet, "EN");
         } else if (hasUkrainian) {
-            bruteForceRunner.bruteForceDecrypt(text, ALPHABET_UA_UPPER, ALPHABET_UA_SMALLER, "UA");
+            bruteForceRunner.bruteForceDecrypt(text, ukrainianUppercaseAlphabet, ukrainianLowercaseAlphabet, "UA");
         }
     }
 }
