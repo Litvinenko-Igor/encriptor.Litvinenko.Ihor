@@ -1,5 +1,5 @@
-package IO;
-import CaesarCipher_And_Decrypted_Files.English_Ukrain;
+package com.javarush.IO;
+import com.javarush.CaesarCipher_And_Decrypted_Files.LanguageProcessor;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -9,21 +9,21 @@ import java.nio.file.Path;
 
 import java.util.List;
 
-public class Reader_Writer extends English_Ukrain{
+public class TextProcessor extends LanguageProcessor {
 
     public List<String> text;
     private Path path;
 
-    public Reader_Writer(Path path) {
+    public TextProcessor(Path path) {
         this.path = path;
     }
 
-    public void readFile_Encrypt_Decrypt(String textCipherMenu, int key) {
+    public void processFile(String textCipherMenu, int key) {
         String s = "";
         try {
             text = Files.readAllLines(path);
             for (String line : text) {
-                s = recognizes_which_language_Encrypt_Decrypt(line, textCipherMenu, key);
+                s = processLanguage(line, textCipherMenu, key);
                 String newfile = getEncryptedFileName(String.valueOf(path));
                 saveTextToFile(newfile, s);
 
