@@ -42,7 +42,7 @@ public class BruteForceRunner {
     private boolean isDecryptedTextValid(String decryptedText, String language) {
         try {
             AlphabetData symbolsAndLetters = new AlphabetData();
-            String[] commonWords = language.equals("EN") ? symbolsAndLetters.COMMON_WORDS_ENGLISH : symbolsAndLetters.COMMON_WORDS_UKRAIN;
+            String[] commonWords = language.equals("EN") ? symbolsAndLetters.englishCommonWords : symbolsAndLetters.ukrainianCommonWords;
 
             for (String word : commonWords) {
                 if (decryptedText.contains(word)) {
