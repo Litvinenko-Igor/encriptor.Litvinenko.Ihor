@@ -10,16 +10,16 @@ public class DecryptionProcessor {
         try {
             for (int i = 0; i < text.length(); i++) {
                 char currentChar = text.charAt(i);
-                if (IGNORED_CHARS.contains(currentChar)) {
+                if (ignoredChars.contains(currentChar)) {
                     transformedText.add(currentChar);
-                } else if (ALPHABET_EN_UPPER.contains(currentChar)) {
-                    extracted(ALPHABET_EN_UPPER, currentChar, key);
-                } else if (ALPHABET_EN_SMALLER.contains(currentChar)) {
-                    extracted(ALPHABET_EN_SMALLER, currentChar, key);
-                } else if (ALPHABET_UA_UPPER.contains(currentChar)) {
-                    extracted(ALPHABET_UA_UPPER, currentChar, key);
-                } else if (ALPHABET_UA_SMALLER.contains(currentChar)) {
-                    extracted(ALPHABET_UA_SMALLER, currentChar, key);
+                } else if (englishUppercaseAlphabet.contains(currentChar)) {
+                    extracted(englishUppercaseAlphabet, currentChar, key);
+                } else if (englishLowercaseAlphabet.contains(currentChar)) {
+                    extracted(englishLowercaseAlphabet, currentChar, key);
+                } else if (ukrainianUppercaseAlphabet.contains(currentChar)) {
+                    extracted(ukrainianUppercaseAlphabet, currentChar, key);
+                } else if (ukrainianLowercaseAlphabet.contains(currentChar)) {
+                    extracted(ukrainianLowercaseAlphabet, currentChar, key);
                 } else {
                     transformedText.add(currentChar);
                 }
