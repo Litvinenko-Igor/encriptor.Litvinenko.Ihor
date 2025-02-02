@@ -1,12 +1,12 @@
-package IO;
+package com.javarush.IO;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class File_True {
+public class FileValidator {
 
-    public boolean file_exist(Path path) {
+    public boolean isFileValid(Path path) {
         try {
             if (!Files.exists(path)) {
                 System.out.println("Файл не існує. Перевірте правильність шляху.");
