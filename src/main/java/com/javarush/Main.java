@@ -1,5 +1,6 @@
-import CLI.CLI;
-import IO.Reader_Writer;
+package com.javarush;
+
+import com.javarush.IO.TextProcessor;
 
 import java.nio.file.Path;
 
@@ -11,9 +12,9 @@ public class Main {
             String command = args[0];
             Path filePath = Path.of(args[1]);
             int key = Integer.parseInt(args[2]);
-            new Reader_Writer(filePath).readFile_Encrypt_Decrypt(command, key);
+            new TextProcessor(filePath).processFile(command, key);
         } else {
-            new CLI().CLI();
+            new CLI().runCLI();
         }
     }
 }
